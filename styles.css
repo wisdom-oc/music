@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -21,10 +22,10 @@ body {
 .back {
   height: 80vh;
   width: 100%;
-  /*background-image: url(images/image.png);*/
+  /*background-image: url(images/image.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center;*/
   position: relative;
   filter: blur(3px);
 }
@@ -36,6 +37,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav {
+  display: none;
 }
 
 .logo {
@@ -197,5 +202,104 @@ body {
   .musi {
     width: 32px;
     border-radius: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .off-screen-menu {
+    background-color: rgb(152, 151, 151);
+    height: 100vh;
+    width: 50%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+    z-index: 100;
+  }
+
+  .off-screen-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .navbar {
+    padding-top: 0;
+  }
+
+  .logo {
+    width: 60px;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    color: rgb(188, 237, 188);
+    font-size: 1.8rem;
+  }
+
+  .off-screen-menu.active {
+    right: 0;
+  }
+
+  .nav {
+    padding: 1rem;
+    display: flex;
+    background-color: transparent;
+    
+  }
+
+  .ham-menu {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+  }
+
+  .ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: #6f86ff;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+    z-index: 100;
+  }
+
+  .ham-menu span:nth-child(1) {
+    top: 25%;
+  }
+
+  .ham-menu span:nth-child(3) {
+    top: 75%;
+  }
+
+  .ham-menu.active span {
+    background-color: red;
+  }
+
+  .ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .ham-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
