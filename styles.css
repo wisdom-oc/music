@@ -246,6 +246,10 @@ body {
     font-size: 1.8rem;
   }
 
+  .navbar ul li a:hover {
+    opacity: .7;
+  }
+
   .off-screen-menu.active {
     right: 0;
   }
